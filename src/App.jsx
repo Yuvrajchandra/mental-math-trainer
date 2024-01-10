@@ -11,7 +11,20 @@ function App() {
     <h2>Train your mental arithmetic skills</h2>
     <h3>Options</h3>
     <br />
-    <p>Hello, World!</p>
+    <p>Run for ___ minutes.</p>
+    <br />
+    <pr>Create questions with numbers in the following range:</pr>
+    <br />
+    <p>Min: ___</p>
+    <br />
+    <p>Max: ___</p>
+    <br />
+    <p>Include:</p> 
+    <p>Addition</p> 
+    <p>Subtraction</p>
+    <p>Multiplication</p>
+    <p>Division</p>
+    <button>Start</button>
     </>
   )
 }
