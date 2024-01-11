@@ -29,7 +29,7 @@ function App() {
 
   const handleAdditionChange = () => {
     setIsAdditionChecked(!isAdditionChecked);
-    if(isAdditionChecked === true) {
+    if(isAdditionChecked === false) {
       setOperands([...operands,"+"]);
     } else {
       setOperands(operands.filter(a => a !== "+"));
@@ -38,7 +38,7 @@ function App() {
 
   const handleSubtractionChange = () => {
     setIsSubtractionChecked(!isSubtractionChecked);
-    if(isSubtractionChecked === true) {
+    if(isSubtractionChecked === false) {
       setOperands([...operands,"-"]);
     } else {
       setOperands(operands.filter(a => a !== "-"));
@@ -47,7 +47,7 @@ function App() {
 
   const handleMultiplicationChange = () => {
     setIsMultiplicationChecked(!isMultiplicationChecked);
-    if(isMultiplicationChecked === true) {
+    if(isMultiplicationChecked === false) {
       setOperands([...operands,"*"]);
     } else {
       setOperands(operands.filter(a => a !== "*"));
@@ -56,7 +56,7 @@ function App() {
 
   const handleDivisionChange = () => {
     setIsDivisionChecked(!isDivisionChecked);
-    if(isDivisionChecked === true) {
+    if(isDivisionChecked === false) {
       setOperands([...operands,"/"]);
     } else {
       setOperands(operands.filter(a => a !== "/"));
@@ -131,6 +131,7 @@ function App() {
     />
     <p>Division</p>
     <button>Start</button>
+    {console.log(operands)}
     </>
   )
 }
