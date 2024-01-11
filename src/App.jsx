@@ -71,8 +71,8 @@ function App() {
     <br />
     <p>Run for
     <input  
-      type="text"  
-      value={duration} 
+      type="number"  
+      value={duration || ''} 
       onChange={handleDurationChange} 
     />
        minutes.</p>
@@ -81,15 +81,15 @@ function App() {
     <br />
     <p>Min: </p>
     <input  
-      type="text"  
-      value={minRange} 
+      type="number"  
+      value={minRange || ''} 
       onChange={handleMinRangeChange} 
     />
     <br />
     <p>Max: </p>
     <input  
-      type="text"  
-      value={maxRange} 
+      type="number"  
+      value={maxRange || ''} 
       onChange={handleMaxRangeChange} 
     />
     <br />
@@ -132,6 +132,9 @@ function App() {
     <p>Division</p>
     <button>Start</button>
     {console.log(operands)}
+    {console.log(minRange)}
+    {console.log(maxRange)}
+    {console.log(duration)}
     </>
   )
 }
