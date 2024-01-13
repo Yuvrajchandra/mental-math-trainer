@@ -1,7 +1,6 @@
 import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-// import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import './Home.css'
 
@@ -68,11 +67,6 @@ function Home() {
   const navigate = useNavigate();
 
   const navigateToChildComponent = () => {
-    // Push the child route with state
-    // history.push({
-    //   pathname: '/trainer',
-    //   state: { duration: duration }
-    // });
     navigate("/trainer", { state: { duration, minRange, maxRange } });
   };
 
@@ -143,17 +137,6 @@ function Home() {
       onChange={handleDivisionChange}
     />
     <p>Division</p>
-    {/* <Link
-        to={{
-            pathname: '/trainer',
-            state: {
-                duration: duration,
-                minRange: minRange,
-            },
-        }}
-    >
-        <button>Start</button>
-    </Link> */}
     <button onClick={() => navigateToChildComponent()}>
         Start
     </button>
