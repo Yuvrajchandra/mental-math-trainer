@@ -1,6 +1,7 @@
 import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
+import { Link } from "react-router-dom";
 import './Home.css'
 
 function Home() {
@@ -132,7 +133,17 @@ function Home() {
       onChange={handleDivisionChange}
     />
     <p>Division</p>
-    <button>Start</button>
+    <Link
+        to={{
+            pathname: '/trainer',
+            state: {
+                duration: duration,
+                minRange: minRange,
+            },
+        }}
+    >
+        <button>Start</button>
+    </Link>
     {console.log(operands)}
     {console.log(minRange)}
     {console.log(maxRange)}
