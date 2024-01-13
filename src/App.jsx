@@ -1,71 +1,80 @@
-import { useState } from 'react'
+// import { useState } from 'react'
+import { Routes,  Route  } from 'react-router-dom';
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import './App.css'
+import Home from './components/Home/Home.jsx';
+import Trainer from './components/Trainer/Trainer.jsx'
+// import './App.css'
 
 function App() {
-  const [duration, setDuration] = useState(0);
-  const [minRange, setMinRange] = useState(0);
-  const [maxRange, setMaxRange] = useState(0);
-  const [operands, setOperands] = useState([]);
+  // const [duration, setDuration] = useState(0);
+  // const [minRange, setMinRange] = useState(0);
+  // const [maxRange, setMaxRange] = useState(0);
+  // const [operands, setOperands] = useState([]);
 
 
-  const [isAdditionChecked, setIsAdditionChecked] = useState(false);
-  const [isSubtractionChecked, setIsSubtractionChecked] = useState(false);
-  const [isMultiplicationChecked, setIsMultiplicationChecked] = useState(false);
-  const [isDivisionChecked, setIsDivisionChecked] = useState(false);
+  // const [isAdditionChecked, setIsAdditionChecked] = useState(false);
+  // const [isSubtractionChecked, setIsSubtractionChecked] = useState(false);
+  // const [isMultiplicationChecked, setIsMultiplicationChecked] = useState(false);
+  // const [isDivisionChecked, setIsDivisionChecked] = useState(false);
 
 
-  const handleDurationChange =(event) => {
-    setDuration(event.target.value);
-  }
-  const handleMinRangeChange =(event) => {
-    setMinRange(event.target.value);
-  }
-  const handleMaxRangeChange =(event) => {
-    setMaxRange(event.target.value);
-  }
+  // const handleDurationChange =(event) => {
+  //   setDuration(event.target.value);
+  // }
+  // const handleMinRangeChange =(event) => {
+  //   setMinRange(event.target.value);
+  // }
+  // const handleMaxRangeChange =(event) => {
+  //   setMaxRange(event.target.value);
+  // }
 
 
-  const handleAdditionChange = () => {
-    setIsAdditionChecked(!isAdditionChecked);
-    if(isAdditionChecked === false) {
-      setOperands([...operands,"+"]);
-    } else {
-      setOperands(operands.filter(a => a !== "+"));
-    }
-  };
+  // const handleAdditionChange = () => {
+  //   setIsAdditionChecked(!isAdditionChecked);
+  //   if(isAdditionChecked === false) {
+  //     setOperands([...operands,"+"]);
+  //   } else {
+  //     setOperands(operands.filter(a => a !== "+"));
+  //   }
+  // };
 
-  const handleSubtractionChange = () => {
-    setIsSubtractionChecked(!isSubtractionChecked);
-    if(isSubtractionChecked === false) {
-      setOperands([...operands,"-"]);
-    } else {
-      setOperands(operands.filter(a => a !== "-"));
-    }
-  };
+  // const handleSubtractionChange = () => {
+  //   setIsSubtractionChecked(!isSubtractionChecked);
+  //   if(isSubtractionChecked === false) {
+  //     setOperands([...operands,"-"]);
+  //   } else {
+  //     setOperands(operands.filter(a => a !== "-"));
+  //   }
+  // };
 
-  const handleMultiplicationChange = () => {
-    setIsMultiplicationChecked(!isMultiplicationChecked);
-    if(isMultiplicationChecked === false) {
-      setOperands([...operands,"*"]);
-    } else {
-      setOperands(operands.filter(a => a !== "*"));
-    }
-  };
+  // const handleMultiplicationChange = () => {
+  //   setIsMultiplicationChecked(!isMultiplicationChecked);
+  //   if(isMultiplicationChecked === false) {
+  //     setOperands([...operands,"*"]);
+  //   } else {
+  //     setOperands(operands.filter(a => a !== "*"));
+  //   }
+  // };
 
-  const handleDivisionChange = () => {
-    setIsDivisionChecked(!isDivisionChecked);
-    if(isDivisionChecked === false) {
-      setOperands([...operands,"/"]);
-    } else {
-      setOperands(operands.filter(a => a !== "/"));
-    }
-  };
+  // const handleDivisionChange = () => {
+  //   setIsDivisionChecked(!isDivisionChecked);
+  //   if(isDivisionChecked === false) {
+  //     setOperands([...operands,"/"]);
+  //   } else {
+  //     setOperands(operands.filter(a => a !== "/"));
+  //   }
+  // };
+
+
 
   return (
     <>
-    <h1>Mental Math Trainer</h1>
+    <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/trainer" element={<Trainer />} />
+    </Routes>
+    {/* <h1>Mental Math Trainer</h1>
     <h2>Train your mental arithmetic skills</h2>
     <h3>Options</h3>
     <br />
@@ -134,9 +143,9 @@ function App() {
     {console.log(operands)}
     {console.log(minRange)}
     {console.log(maxRange)}
-    {console.log(duration)}
+    {console.log(duration)} */}
     </>
   )
 }
 
-export default App
+export default App;
