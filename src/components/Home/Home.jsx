@@ -1,7 +1,8 @@
 import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import './Home.css'
 
 function Home() {
@@ -64,7 +65,16 @@ function Home() {
     }
   };
 
+  const navigate = useNavigate();
 
+  const navigateToChildComponent = () => {
+    // Push the child route with state
+    // history.push({
+    //   pathname: '/trainer',
+    //   state: { duration: duration }
+    // });
+    navigate("/trainer", { state: { duration, minRange, maxRange } });
+  };
 
   return (
     <>
@@ -133,7 +143,7 @@ function Home() {
       onChange={handleDivisionChange}
     />
     <p>Division</p>
-    <Link
+    {/* <Link
         to={{
             pathname: '/trainer',
             state: {
@@ -143,7 +153,10 @@ function Home() {
         }}
     >
         <button>Start</button>
-    </Link>
+    </Link> */}
+    <button onClick={() => navigateToChildComponent()}>
+        Start
+    </button>
     {console.log(operands)}
     {console.log(minRange)}
     {console.log(maxRange)}
