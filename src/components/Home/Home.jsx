@@ -65,7 +65,7 @@ function Home() {
   const navigate = useNavigate();
 
   const navigateToChildComponent = () => {
-    navigate("/trainer", { state: { duration, minRange, maxRange } });
+    navigate("/trainer", { state: { duration, minRange, maxRange, operands } });
   };
 
   return (

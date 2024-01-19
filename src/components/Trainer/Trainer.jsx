@@ -6,6 +6,7 @@ function Trainer () {
     const duration = location.state.duration;
     const minRange = location.state.minRange;
     const maxRange = location.state.maxRange;
+    const operands = location.state.operands;
 
     return (
         <>
@@ -14,6 +15,8 @@ function Trainer () {
             <p>Duration is: {duration}</p>
             <p>Min Range is: {minRange}</p>
             <p>Max Range is: {maxRange}</p>
+            <p>Max Range is: {operands}</p>
+
         </>
     )
 }
